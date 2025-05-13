@@ -1,6 +1,7 @@
 # This file will be used for any functions that handle data manipulation in the database
 
 import json
+from classes import Database
 
 def print_json():
     with open("data/database.json", encoding="utf-8") as j:
