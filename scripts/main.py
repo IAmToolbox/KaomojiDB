@@ -7,6 +7,8 @@ import os
 from data_manip import *
 
 def init():
+    if not os.path.isdir("data"):
+        os.mkdir("data")
     if os.path.isfile("data/database.json"):
         print("Database loaded!")
     else:
