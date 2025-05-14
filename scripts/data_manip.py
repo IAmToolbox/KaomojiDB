@@ -3,10 +3,17 @@
 import json
 from classes import Database
 
-def print_json():
+database = Database(None)
+
+def load_database():
     with open("data/database.json", encoding="utf-8") as j:
         raw_json = json.load(j)
-    print(raw_json)
+    database.database = raw_json
+    print("Database successfully loaded!")
+    
+
+def print_json():
+    print(database.database)
 
 def write_json():
     test_dictionary = {"smiley": ":)"}

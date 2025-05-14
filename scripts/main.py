@@ -10,7 +10,7 @@ def init():
     if not os.path.isdir("data"):
         os.mkdir("data")
     if os.path.isfile("data/database.json"):
-        print("Database loaded!")
+        print("Database found!")
     else:
         response = input("Database not found. Create new database? (Y/N)")
         match response:
@@ -28,6 +28,7 @@ def init():
 def main():
     print("Welcome to KaomojiDB. This is just a placeholder message for now.")
     init()
+    load_database()
     print_json()
 
 main()
