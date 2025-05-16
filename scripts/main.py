@@ -31,7 +31,7 @@ def main():
     print("Welcome to KaomojiDB. This is just a placeholder message for now.")
     init()
     while True:
-        main_menu_choice = input("What would you like to do? Please input a number to select an option.\n1. View current database\n2. Search for kaomoji\n3. Add new kaomoji to database\n4. Reset database\n5. Exit program\n")
+        main_menu_choice = input("What would you like to do? Please input a number to select an option.\n1. View current database\n2. Search for kaomoji\n3. Add new kaomoji to database\n4. Reset database\n5. Save and exit program\n")
         match main_menu_choice:
             case "1":
                 print("This is the current database:")
@@ -44,6 +44,7 @@ def main():
             case "4":
                 reset_data()
             case "5":
+                write_json()
                 print("Goodbye!")
                 exit()
             case _:
