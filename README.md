@@ -22,7 +22,6 @@ TODO: Fill this in with proper instructions
 
 ## Special Thanks
 
-- Discord user FabPhntm for the initial idea
 - My boyfriend Syntuple for emotional support
 - All instructors from boot.dev for teaching me what I needed to make this
 - The boot.dev community for helping me out with bugs
