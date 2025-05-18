@@ -53,7 +53,13 @@ def reset_data():
             raise Exception("Invalid response...")
 
 def print_json():
-    print(database.database)
+    if len(list(database.database.keys())) == 0:
+        print("Database is empty")
+        return()
+    
+    print("This is the current database")
+    for item in database.database:
+        print(item, database.database[item])
 
 def write_json():
     json_object = json.dumps(database.database, indent=4)

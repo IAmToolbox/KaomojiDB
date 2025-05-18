@@ -34,7 +34,6 @@ def main():
         main_menu_choice = input("What would you like to do? Please input a number to select an option.\n1. View current database\n2. Search for kaomoji\n3. Add new kaomoji to database\n4. Reset database\n5. Save and exit program\n")
         match main_menu_choice:
             case "1":
-                print("This is the current database:")
                 #TODO Make sure this is pretty-printed in the future. Can't have giant databases in a single line
                 print_json()
             case "2":
