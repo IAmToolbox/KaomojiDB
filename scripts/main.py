@@ -40,12 +40,13 @@ def main():
                 search_item()
             case "3":
                 add_item()
+                write_json()
             case "4":
                 reset_data()
             case "5":
                 write_json()
                 print("Goodbye!")
-                exit()
+                exit(0)
             case _:
                 raise Exception("Invalid main menu choice")
 
