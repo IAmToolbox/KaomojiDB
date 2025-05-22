@@ -20,18 +20,23 @@ def add_item():
 
 def search_item():
     found_items = []
-    search_by = input("Search by mood or by name? (M/N): ")
-    match search_by:
-        case "M":
-            search_query = input("Which mood do you want to search for?\n")
-            for item in list(database.database.keys()):
-                if search_query in database.database[item][1]:
-                    found_items.append(item)
-        case "N":
-            search_query = input("What's the name of the kaomoji you want to search for?\n")
-            for item in list(database.database.keys()):
-                if search_query in database.database[item][0]:
-                    found_items.append(item)
+    while True:
+        search_by = input("Search by mood or by name? (M/N): ")
+        match search_by:
+            case "M":
+                search_query = input("Which mood do you want to search for?\n")
+                for item in list(database.database.keys()):
+                    if search_query in database.database[item][1]:
+                        found_items.append(item)
+                break
+            case "N":
+                search_query = input("What's the name of the kaomoji you want to search for?\n")
+                for item in list(database.database.keys()):
+                    if search_query in database.database[item][0]:
+                        found_items.append(item)
+                break
+            case _:
+                print("Invalid response")
     #TODO Make search case-insensitive... just in case
     if len(found_items) != 0:
         print("Found the following kaomoji:")
@@ -41,16 +46,18 @@ def search_item():
         print("No kaomoji found...")
 
 def reset_data():
-    response = input("Are you sure you want to reset database? This will delete all kaomoji stored within! (Y/N): ")
-    match response:
-        case "Y":
-            overwrite_json()
-            print("Database reset. Goodbye.")
-            exit()
-        case "N":
-            print("Database has been kept as is.")
-        case _:
-            raise Exception("Invalid response...")
+    while True:
+        response = input("Are you sure you want to reset database? This will delete all kaomoji stored within! (Y/N): ")
+        match response:
+            case "Y":
+                overwrite_json()
+                print("Database reset. Goodbye.")
+                exit()
+            case "N":
+                print("Database has been kept as is.")
+                return
+            case _:
+                print("Invalid response...")
 
 def print_json():
     if len(list(database.database.keys())) == 0:

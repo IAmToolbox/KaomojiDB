@@ -48,6 +48,6 @@ def main():
                 print("Goodbye!")
                 exit(0)
             case _:
-                raise Exception("Invalid main menu choice")
+                print("Invalid main menu choice")
 
 main()
